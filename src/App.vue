@@ -87,11 +87,16 @@ RS-25
 
       arm = arm.sort((a, b) => (a.contagem < b.contagem ? 1 : -1));
 
-      console.log(arm);
       this.map = arm;
     },
     copy: function () {
-      if (this.$clipboard("aaaa")) {
+      let copy = "Valor\tContagem\tPorcentagem\n";
+      for (const m of this.map) {
+        copy += `${m.linha}\t${m.contagem}\t${m.porcentagem}\n`;
+      }
+      console.log(copy)
+
+      if (this.$clipboard(copy)) {
         alert("Copiado!");
       } else {
         alert(
