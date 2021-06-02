@@ -1,5 +1,5 @@
 {
-  "name": "count",
+  "name": "contagem-ocorrencias",
   "version": "0.1.0",
   "private": true,
   "scripts": {
