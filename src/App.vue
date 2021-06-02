@@ -2,14 +2,18 @@
   <div id="app">
     <section class="center hero is-primary">
       <div class="hero-body">
-        <p class="title"> 🔍 Contagem de ocorrências</p>
+        <p class="title">🔍 Contagem de ocorrências</p>
         <p class="subtitle">github.com/arthurrmp/conta-ocorrencias</p>
       </div>
     </section>
 
     <section class="componentes">
       <b-field label="Valores">
-        <b-input placeholder="Copie os valores separados por quebra de linha para contar as ocorrências." v-model="msg" type="textarea"></b-input>
+        <b-input
+          placeholder="Copie os valores separados por quebra de linha para contar as ocorrências."
+          v-model="msg"
+          type="textarea"
+        ></b-input>
       </b-field>
       <!--
         primary
@@ -61,9 +65,6 @@ export default {
     };
   },
   methods: {
-    modificar: function () {
-      this.msg = "MODIFICADO";
-    },
     calcular: function () {
       if (!this.msg) {
         alert("Campo não pode ser vazio");
@@ -76,7 +77,6 @@ export default {
       }
 
       const valoresTotais = this.msg.split("\n");
-      console.log(valoresTotais);
 
       const valoresUnicos = [];
 
@@ -132,7 +132,6 @@ export default {
       for (const m of this.map) {
         copy += `${m.linha}\t${m.contagem}\t${m.porcentagem}\n`;
       }
-      console.log(copy);
 
       if (this.$clipboard(copy)) {
         alert("Copiado!");
@@ -142,6 +141,9 @@ export default {
         );
       }
     },
+  },
+  beforeMount: function () {
+    document.title = "Contagem de ocorrências";
   },
 };
 </script>
@@ -163,5 +165,4 @@ export default {
 .componentes {
   margin-top: 20px;
 }
-
 </style>
