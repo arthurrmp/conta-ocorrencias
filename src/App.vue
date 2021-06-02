@@ -22,8 +22,15 @@
         danger
         -->
       <b-field>
-        <b-checkbox v-model="removerLixo">Remover acentuação</b-checkbox>
-        <b-checkbox v-model="lower">Converter para minúsculas</b-checkbox>
+        <b-checkbox
+          tooltip="Marque para remover toda a acentuação"
+          v-model="removerLixo"
+          >Remover acentuação</b-checkbox
+        >
+        <b-checkbox
+          v-model="lower"
+          >Converter para minúsculas</b-checkbox
+        >
       </b-field>
       <b-field class="center">
         <b-button type="is-primary" @click="calcular">Calcular</b-button>
@@ -53,7 +60,7 @@ export default {
   name: "App",
   data() {
     return {
-      removerLixo: false,
+      removerLixo: true,
       lower: true,
       map: [],
       columns: [
