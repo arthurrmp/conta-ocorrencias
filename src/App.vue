@@ -27,10 +27,7 @@
           v-model="removerLixo"
           >Remover acentuação</b-checkbox
         >
-        <b-checkbox
-          v-model="lower"
-          >Converter para minúsculas</b-checkbox
-        >
+        <b-checkbox v-model="lower">Converter para minúsculas</b-checkbox>
       </b-field>
       <b-field class="center">
         <b-button type="is-primary" @click="calcular">Calcular</b-button>
@@ -157,7 +154,9 @@ export default {
 
 <style>
 #app {
-  max-width: 800px;
+  max-width: 850px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
   color: #2c3e50;
